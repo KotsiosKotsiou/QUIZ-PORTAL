@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Quiz Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 20px;
+            max-width: 1000px;
+        }
+
+        .category-btn {
+            background: #ffffff;
+            border: none;
+            color: #ff7b54;
+            padding: 20px 40px;
+            font-size: 1.2em;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-btn:hover {
+            background: #ff7b54;
+            color: #ffffff;
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .link-buttons {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin-top: 20px;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .link-buttons button {
+            background: #ffffff;
+            color: #333;
+            padding: 15px 25px;
+            border: 2px solid #ff7b54;
+            border-radius: 15px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .link-buttons button:hover {
+            background: #ffb347;
+            border-color: #ffb347;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .category-btn {
+                font-size: 1em;
+                padding: 15px 20px;
+                min-width: 150px;
+            }
+
+            .link-buttons button {
+                font-size: 0.9em;
+                padding: 12px 18px;
+                min-width: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Physics Quiz Portal</h1>
+
+    <div class="container">
+        <button class="category-btn" onclick="toggleLinks('A')">A-LIK</button>
+        <button class="category-btn" onclick="toggleLinks('B')">B-LIK</button>
+        <button class="category-btn" onclick="toggleLinks('G')">Γ-LIK</button>
+        <button class="category-btn" onclick="toggleLinks('GK')">General Knowledge</button>
+        <button class="category-btn" onclick="toggleLinks('PHA 130')">PHA 130</button>
+    </div>
+
+    <!-- Links for A-LIK -->
+    <div id="links-A" class="link-buttons">
+        <button onclick="window.open('https://kotsioskotsiou.github.io/A-LYK-FYS/METRISIS1.html')">ΜΕΤΡΗΣΕΙΣ</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/A-LYK-FYS/EOK2.html')">ΚΙΝΗΣΗ ΣΕ ΕΥΘΕΙΑ ΓΡΑΜΜΗ </button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/A-LYK-FYS/NEWTON3.html')">ΔΥΝΑΜΕΙΣ ΚΑΙ ΝΟΜΟΙ ΤΟΥ ΝΕΥΤΩΝΑ </button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/A-LYK-FYS/energia.html')">Η ΕΝΝΟΙΑ ΤΗΣ ΕΝΕΡΓΕΙΑΣ</button>
+    </div>
+
+    <!-- Links for B-LIK -->
+    <div id="links-B" class="link-buttons">
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-LYK-FYS/KINISI STO EPIPEDO 1.html')">ΚΙΝΗΣΗ ΣΤΟ ΕΠΙΠΕΔΟ ΕΙΣΑΓΩΓΙΚΕΣ ΕΝΝΟΙΕΣ</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-LYK-FYS/BOLES 2.html')">ΒΟΛΕΣ</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-LYK-FYS/SXETIKI KINISI 3.html')">ΣΧΕΤΙΚΗ ΚΙΝΗΣΗ</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-LYK-FYS/KIKLIKI KINISI 4.html')">ΚΥΚΛΙΚΗ ΚΙΝΗΣΗ</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-LYK-FYS/PAGOSMIA ELKSI 5.html')">Ο ΝΟΜΟΣ ΤΗΣ ΠΑΓΚΟΣΜΙΑΣ ΕΛΞΗΣ</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-LYK-FYS/ORMI 6.html')">Η ΕΝΝΟΙΑ ΤΗΣ ΟΡΜΗΣ - ΚΡΟΥΣΕΙΣ </button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-LYK-FYS/STATIKOS ILEKTRISMOS 7.html')">ΣΤΑΤΙΚΟΣ ΗΛΕΚΤΡΙΣΜΟΣ</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-LYK-FYS/DINAMIKOS ILEKTRISMOS 8.html')">ΔΥΝΑΜΙΚΟΣ ΗΛΕΚΤΡΙΣΜΟΣ</button>
+    </div>
+
+    <!-- Links for Γ-LIK -->
+    <div id="links-G" class="link-buttons">
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/STEREO SOMA 1.html')">Μηχανική Στερεού Σώματος 1.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/STEREO SOMA 1.1.html')">Μηχανική Στερεού Σώματος 2.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/TALANDOSIS 2.html')">Ταλαντώσεις 1.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/TALANDOSIS 2.1.html')">Ταλαντώσεις 2.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/KIMATA 3.html')">Κύματα 1.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/KIMATA 3.1.html')">Κύματα 2.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/ILEKTROMAGNITISMOS 4.html')">Ηλεκτρομαγνητισμός 1.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/ILEKTROMAGNITISMOS 4.1.html')">Ηλεκτρομαγνητισμός 2.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-LYK-FYS/ILEKTROMAGNITISMOS 4.2.html')">Ηλεκτρομαγνητισμός 3.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/Theoria-Pangipries/theoria 1 PAN')">Παγκύπριες Εξετάσεις 1.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/Theoria-Pangipries/theoria 2 PAN')">Παγκύπριες Εξετάσεις 2.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/Theoria-Pangipries/theoria 3 PAN')">Παγκύπριες Εξετάσεις 3.0</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/Theoria-Pangipries/theoria 3 PAN')">Παγκύπριες Εξετάσεις 4.0</button>
+    </div>
+
+    <!-- Links for PHA 130 -->
+    <div id="links-PHA 130" class="link-buttons">
+        <button onclick="window.open('https://kotsioskotsiou.github.io/PHA-130-european/5.html')">LEC 5</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/PHA-130-european/5.1.html')">LEC 5.1</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/PHA-130-european/6.html')">LEC 6</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/PHA-130-european/6.1.html')">LEC 6.1</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/PHA-130-european/7.html')">LEC 7</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/PHA-130-european/7.1.html')">LEC 7.1</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/PHA-130-european/8.html')">LEC 8</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/PHA-130-european/8.1.html')">LEC 8.1</button>
+    </div>
+
+    <!-- Links for General Knowledge -->
+    <div id="links-GK" class="link-buttons">
+        <button onclick="window.open('https://kotsioskotsiou.github.io/a-mili/Index.html')">QUIZ 1</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/a-mili/Index2.0.html')">QUIZ 2</button>
+    </div>
+
+    <script>
+        function toggleLinks(category) {
+            document.querySelectorAll('.link-buttons').forEach(section => {
+                section.style.display = 'none';
+            });
+            const selected = document.getElementById('links-' + category);
+            selected.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
