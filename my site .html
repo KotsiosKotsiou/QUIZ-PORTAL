@@ -1,157 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Quiz Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physics Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            min-height: 100vh;
-        }
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0d0d0d;
+      color: #00fff7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 1px 1px, #00ffc8 1px, transparent 0),
+        linear-gradient(to bottom, rgba(0,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to right, rgba(0,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
 
-        h1 {
-            margin-top: 20px;
-            font-size: 2.5em;
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            letter-spacing: 1px;
-        }
+    h1 {
+      margin-top: 20px;
+      font-size: 2em;
+      text-align: center;
+      color: #00ffc8;
+      text-shadow: 0 0 3px #00fff7, 0 0 6px #00fff7;
+      border: 3px double #00fff7;
+      padding: 10px 20px;
+      background-color: rgba(0, 255, 247, 0.05);
+      border-radius: 12px;
+    }
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 30px;
-            gap: 20px;
-            max-width: 1000px;
-        }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 40px;
+      max-width: 960px;
+    }
 
-        .category-btn {
-            background: #ffffff;
-            border: none;
-            color: #ff7b54;
-            padding: 20px 40px;
-            font-size: 1.2em;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 200px;
-            font-weight: 600;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+    .category-btn {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00ffc8;
+      color: #00ffc8;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 200px;
+      box-shadow: 0 0 10px #00ffc8, inset 0 0 4px #00ffc8;
+    }
 
-        .category-btn:hover {
-            background: #ff7b54;
-            color: #ffffff;
-            transform: translateY(-5px) scale(1.05);
-        }
+    .category-btn:hover {
+      background: #00ffc8;
+      color: #0d0d0d;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffc8;
+    }
 
-        .link-buttons {
-            display: none;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-width: 900px;
-            margin-top: 20px;
-            animation: fadeIn 0.4s ease forwards;
-        }
+    .link-buttons {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 900px;
+      margin-top: 25px;
+      animation: fadeIn 0.4s ease forwards;
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .link-buttons button {
+      background: rgba(255, 255, 255, 0.05);
+      color: #80ffea;
+      border: 2px solid #80ffea;
+      padding: 12px 18px;
+      font-size: 0.75em;
+      cursor: pointer;
+      border-radius: 6px;
+      box-shadow: 0 0 6px #80ffea;
+      transition: all 0.2s ease;
+      min-width: 180px;
+    }
 
-        .link-buttons button {
-            background: #ffffff;
-            color: #333;
-            padding: 15px 25px;
-            border: 2px solid #ff7b54;
-            border-radius: 15px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 180px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
+    .link-buttons button:hover {
+      background: #80ffea;
+      color: #0d0d0d;
+      box-shadow: 0 0 12px #80ffea;
+    }
 
-        .link-buttons button:hover {
-            background: #ffb347;
-            border-color: #ffb347;
-            color: #ffffff;
-            transform: translateY(-3px);
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.3em;
+      }
 
-            .category-btn {
-                font-size: 1em;
-                padding: 15px 20px;
-                min-width: 150px;
-            }
-
-            .link-buttons button {
-                font-size: 0.9em;
-                padding: 12px 18px;
-                min-width: 140px;
-            }
-        }
-    </style>
+      .category-btn,
+      .link-buttons button {
+        font-size: 0.6em;
+        padding: 10px 15px;
+        min-width: 140px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Physics Quiz Portal</h1>
+  <h1>Physics Quiz Arcade</h1>
 
-    <div class="container">
-        <button class="category-btn" onclick="toggleLinks('A')">A-LIK</button>
-        <button class="category-btn" onclick="toggleLinks('B')">B-LIK</button>
-        <button class="category-btn" onclick="toggleLinks('G')">Γ-LIK</button>
-        <button class="category-btn" onclick="toggleLinks('GK')">General Knowledge QUIZ</button>
-        <button class="category-btn" onclick="toggleLinks('QB')">General Knowledge QUIZ BOWL</button>
-        <button class="category-btn" onclick="toggleLinks('PHA 130')">PHA 130</button>
-        <button class="category-btn" onclick="toggleLinks('BB')">B-ΓΥΜΝ</button>
-        <button class="category-btn" onclick="toggleLinks('GG')">Γ-ΓΥΜΝ</button>
-    </div>
+  <div class="container">
+    <button class="category-btn" onclick="toggleLinks('A')">A-LYK</button>
+    <button class="category-btn" onclick="toggleLinks('B')">B-LYK</button>
+    <button class="category-btn" onclick="toggleLinks('G')">Γ-LYK</button>
+    <button class="category-btn" onclick="toggleLinks('GK')">General Knowledge</button>
+    <button class="category-btn" onclick="toggleLinks('QB')">Quiz Bowl</button>
+    <button class="category-btn" onclick="toggleLinks('PHA 130')">PHA 130</button>
+    <button class="category-btn" onclick="toggleLinks('BB')">B-ΓΥΜΝ</button>
+    <button class="category-btn" onclick="toggleLinks('GG')">Γ-ΓΥΜΝ</button>
+  </div>
 
 
     <div id="links-BB" class="link-buttons">
-        <button onclick="window.open('https://kotsioskotsiou.github.io/B-GYMN-FYS/ΚΕΦ 1 Φυσικά μεγέθη και μετρήσεις.html')">Φυσικά μεγέθη και μετρήσεις</button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/B-GYMN-FYS/ΚΕΦ 2 Περιγραφή της κίνησης.html')">Περιγραφή της κίνησης </button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/B-GYMN-FYS/ΚΕΦ 3 Δυνάμεις – Αποτέλεσμα δύναμης.html')">Δυνάμεις – Αποτέλεσμα δύναμης </button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/B-GYMN-FYS/ΚΕΦ 4 Πίεση.html')">Πίεση</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-GYMN-FYS/ΚΕΦ 1 Φυσικά μεγέθη και μετρήσεις.html')">Φυσικά μεγέθη και μετρήσεις</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-GYMN-FYS/ΚΕΦ 2 Περιγραφή της κίνησης.html')">Περιγραφή της κίνησης </button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-GYMN-FYS/ΚΕΦ 3 Δυνάμεις – Αποτέλεσμα δύναμης.html')">Δυνάμεις – Αποτέλεσμα δύναμης </button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/B-GYMN-FYS/ΚΕΦ 4 Πίεση.html')">Πίεση</button>
               
     </div>
 
 
     <div id="links-GG" class="link-buttons">
-        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 1 Ενέργεια.html')">ΚΕΦ 1 Ενέργεια</button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 1.1 Ενέργεια.html')">ΚΕΦ 1.1 Ενέργεια</button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 2 Στατικός Ηλεκτρισμός.html')">ΚΕΦ 2 Στατικός Ηλεκτρισμός</button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 2.1 Στατικός Ηλεκτρισμός.html')">ΚΕΦ 2.1 Στατικός Ηλεκτρισμός</button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 3 Δυναμικός Ηλεκτρισμός.html')">ΚΕΦ 3 Δυναμικός Ηλεκτρισμός</button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 4 Ύλη και Ενέργεια .html')">ΚΕΦ 4 Ύλη και Ενέργεια </button>
-        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 5 Διάδοση της Θερμότητας.html')">ΚΕΦ 5 Διάδοση της Θερμότητας</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 1 Ενέργεια.html')">ΚΕΦ 1 Ενέργεια</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 1.1 Ενέργεια.html')">ΚΕΦ 1.1 Ενέργεια</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 2 Στατικός Ηλεκτρισμός.html')">ΚΕΦ 2 Στατικός Ηλεκτρισμός</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 2.1 Στατικός Ηλεκτρισμός.html')">ΚΕΦ 2.1 Στατικός Ηλεκτρισμός</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 3 Δυναμικός Ηλεκτρισμός.html')">ΚΕΦ 3 Δυναμικός Ηλεκτρισμός</button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 4 Ύλη και Ενέργεια .html')">ΚΕΦ 4 Ύλη και Ενέργεια </button>
+        <button onclick="window.open('https://kotsioskotsiou.github.io/3-GYMN-FYS/ΚΕΦ 5 Διάδοση της Θερμότητας.html')">ΚΕΦ 5 Διάδοση της Θερμότητας</button>
 
     </div>
 
@@ -218,14 +222,15 @@
         <button onclick="window.open('https://kotsioskotsiou.github.io/QUIZBALL/QUIZBALL.html')">QUIZ BOWL 1</button>
     </div>
 
-    <script>
-        function toggleLinks(category) {
-            document.querySelectorAll('.link-buttons').forEach(section => {
-                section.style.display = 'none';
-            });
-            const selected = document.getElementById('links-' + category);
-            selected.style.display = 'flex';
-        }
-    </script>
+  <script>
+    function toggleLinks(category) {
+      document.querySelectorAll('.link-buttons').forEach(section => {
+        section.style.display = 'none';
+      });
+      const selected = document.getElementById('links-' + category);
+      if (selected) selected.style.display = 'flex';
+    }
+  </script>
+
 </body>
 </html>
